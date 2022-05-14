@@ -1,0 +1,93 @@
+body {
+    background-image: url(arbol.jpg) ;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+/* Imagenes en carpetas: "./carpeta/archivo.jpg" */
+
+h1 {
+    font-family: 'Ms Madi', cursive;
+    font-size: 35px;
+}
+
+.container {
+    width: 230px;
+    height: 300px;
+    text-align: center;
+}
+
+#flex-container {
+    align-self: flex-end;
+}
+.cards {
+    width: 230px;
+    position: fixed;
+    height: 300px;
+    transition-property: all;
+    transition-duration: 1s;
+    border-radius: 36px;
+    border-style: dashed;
+    box-shadow: 7px 10px 20px black;
+}
+
+.card-front {
+    background: linear-gradient( 
+        25deg,
+        rgb(220, 57, 220),
+        Pink,
+        rgb(145, 218, 242)
+    );
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-back {
+    background-color: rgb(216, 174, 208);
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container:hover .card-front {
+    z-index: -1;
+}
+
+.container:hover .card-back {
+    z-index: 2;
+}
+
+.container:hover .card-front {
+    animation-name: left;
+    animation-duration: 0.5s;
+}
+
+.container-image {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 190px;
+    width: 200px;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@keyframes left {
+    0% {
+        transform:translateX(0);
+    }
+    50% {
+        transform:translateX(-200px);
+    }
+    100% {
+        transform:translateX(0);
+    }
+}
